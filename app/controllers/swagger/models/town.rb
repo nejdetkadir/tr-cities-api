@@ -2,13 +2,13 @@
 
 module Swagger
   module Models
-    class City
+    class Town
       include Swagger::Blocks
 
       swagger_component do
-        schema :City do
+        schema :Town do
           key :type, :object
-          key :required, %i[id name alpha_2_code]
+          key :required, %i[id name]
 
           property :id do
             key :type, :int64
@@ -17,12 +17,7 @@ module Swagger
 
           property :name do
             key :type, :string
-            key :example, 'Samsun'
-          end
-
-          property :alpha_2_code do
-            key :type, :string
-            key :example, 'TR-55'
+            key :example, 'Bafra'
           end
         end
       end
