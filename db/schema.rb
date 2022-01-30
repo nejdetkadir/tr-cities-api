@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_30_145920) do
+ActiveRecord::Schema.define(version: 2022_01_30_150641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2022_01_30_145920) do
     t.index ["town_id"], name: "index_districts_on_town_id"
   end
 
+  create_table "quarters", force: :cascade do |t|
+    t.bigint "district_id", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["district_id", "name"], name: "index_quarters_on_district_id_and_name", unique: true
+    t.index ["district_id"], name: "index_quarters_on_district_id"
+  end
+
   create_table "towns", force: :cascade do |t|
     t.bigint "city_id", null: false
     t.string "name", null: false
@@ -43,5 +52,6 @@ ActiveRecord::Schema.define(version: 2022_01_30_145920) do
   end
 
   add_foreign_key "districts", "towns"
+  add_foreign_key "quarters", "districts"
   add_foreign_key "towns", "cities"
 end

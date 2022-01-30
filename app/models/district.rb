@@ -6,4 +6,5 @@ class District < ApplicationRecord
 
   # associations
   belongs_to :town
+  has_many :quarters, dependent: :destroy
 end
