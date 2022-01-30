@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
       resources :towns, only: [:index] do
         get '/search', to: 'towns#search', on: :collection
+
+        resources :districts, only: [:index] do
+          get '/search', to: 'districts#search', on: :collection
+        end
       end
     end
   end
