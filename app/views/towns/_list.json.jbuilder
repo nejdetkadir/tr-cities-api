@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-json.partial! 'cities/city', locals: { city: city }
+json.city do
+  json.partial! 'cities/city', locals: { city: city }
+end
 
 json.towns(towns) do |town|
   json.partial! 'town', locals: { town: town }

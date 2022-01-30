@@ -2,24 +2,28 @@
 
 module Swagger
   module Responses
-    module Town
+    module District
       class List
         include Swagger::Blocks
 
         swagger_component do
-          schema :TownsListResponse do
+          schema :DistrictsListResponse do
             key :type, :object
-            key :required, %i[city towns meta]
+            key :required, %i[city town districts meta]
 
             property :city do
               key :'$ref', :City
             end
 
-            property :towns do
+            property :town do
+              key :'$ref', :Town
+            end
+
+            property :districts do
               key :type, :array
 
               items do
-                key :'$ref', :Town
+                key :'$ref', :District
               end
             end
 
