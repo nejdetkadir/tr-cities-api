@@ -27,14 +27,19 @@ class SwaggerController < ApplicationController
   SWAGGERED_CLASSES = [
     Swagger::Controllers::CitiesController,
     Swagger::Controllers::TownsController,
+    Swagger::Controllers::DistrictsController,
     Swagger::Parameters::Page,
     Swagger::Parameters::CityFilter,
+    Swagger::Parameters::TownFilter,
+    Swagger::Parameters::DistrictFilter,
     Swagger::Responses::City::List,
     Swagger::Responses::Town::List,
+    Swagger::Responses::District::List,
     Swagger::Models::City,
     Swagger::Models::Meta,
     Swagger::Models::Pagination,
     Swagger::Models::Town,
+    Swagger::Models::District,
     self
   ].freeze
 
