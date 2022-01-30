@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 class TownsController < ApplicationController
-  before_action :set_city
+  before_action :set_city, except: [:show]
 
   def index
     @towns = @city.towns.page(pagination_object.page).per(pagination_object.per_page)
+  end
+
+  def show
+    @town = Town.find(params[:id])
   end
 
   def search

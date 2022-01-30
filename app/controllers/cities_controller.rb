@@ -5,6 +5,10 @@ class CitiesController < ApplicationController
     @cities = City.all.page(pagination_object.page).per(pagination_object.per_page)
   end
 
+  def show
+    @city = City.find(params[:id])
+  end
+
   def search
     query = City.ransack(params[:q])
 

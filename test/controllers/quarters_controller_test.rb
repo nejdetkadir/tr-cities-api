@@ -13,6 +13,14 @@ class QuartersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should return quarter by id" do
+    quarter = create(:quarter)
+
+    get quarter_url(quarter)
+
+    assert_response :success
+  end
+
   test "should return quarters with by searching of district" do
     get search_city_town_districts_url(@quarter.district.town.city, @quarter.district.town, @quarter.district)
 

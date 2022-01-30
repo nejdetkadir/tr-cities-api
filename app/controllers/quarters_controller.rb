@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
 class QuartersController < ApplicationController
-  before_action :set_city
-  before_action :set_town
-  before_action :set_district
+  before_action :set_city, except: [:show]
+  before_action :set_town, except: [:show]
+  before_action :set_district, except: [:show]
 
   def index
     @quarters = @district.quarters.page(pagination_object.page).per(pagination_object.per_page)
+  end
+
+  def show
+    @quarter = Quarter.find(params[:id])
   end
 
   def search

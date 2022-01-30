@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
 class DistrictsController < ApplicationController
-  before_action :set_city
-  before_action :set_town
+  before_action :set_city, except: [:show]
+  before_action :set_town, except: [:show]
 
   def index
     @districts = @town.districts.page(pagination_object.page).per(pagination_object.per_page)
+  end
+
+  def show
+    @district = District.find(params[:id])
   end
 
   def search

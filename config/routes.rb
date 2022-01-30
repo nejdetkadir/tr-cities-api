@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # Cities
   defaults format: :json do
-    resources :cities, only: [:index] do
+    resources :cities, only: [:index, :show] do
       get '/search', to: 'cities#search', on: :collection
 
       resources :towns, only: [:index] do
@@ -29,5 +29,9 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    resources :towns, only: [:show]
+    resources :districts, only: [:show]
+    resources :quarters, only: [:show]
   end
 end

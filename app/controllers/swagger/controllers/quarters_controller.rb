@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/ClassLength
 module Swagger
   module Controllers
     class QuartersController
@@ -39,6 +40,30 @@ module Swagger
             content :'application/json' do
               schema do
                 key :'$ref', :QuartersListResponse
+              end
+            end
+          end
+        end
+      end
+
+      swagger_path '/quarters/{quarter_id}' do
+        operation :get do
+          key :summary, 'Return quarter with by id'
+          key :description, 'Return quarter with by id'
+          key :operationId, 'showQuarter'
+          key :tags, [
+            'quarters'
+          ]
+
+          parameter do
+            key :'$ref', :quarter_id
+          end
+
+          response 200 do
+            key :description, 'Successfull response'
+            content :'application/json' do
+              schema do
+                key :'$ref', :QuarterShowResponse
               end
             end
           end
@@ -101,3 +126,4 @@ module Swagger
     end
   end
 end
+# rubocop:enable Metrics/ClassLength
