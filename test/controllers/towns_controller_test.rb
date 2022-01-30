@@ -13,6 +13,14 @@ class TownsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should return town by id" do
+    town = create(:town)
+
+    get town_url(town)
+
+    assert_response :success
+  end
+
   test "should return towns with by searching of city" do
     get search_city_towns_url(@city)
 
