@@ -33,6 +33,30 @@ module Swagger
         end
       end
 
+      swagger_path '/cities/{city_id}' do
+        operation :get do
+          key :summary, 'Return city with by id'
+          key :description, 'Return city with by id'
+          key :operationId, 'showCity'
+          key :tags, [
+            'cities'
+          ]
+
+          parameter do
+            key :'$ref', :city_id
+          end
+
+          response 200 do
+            key :description, 'Successfull response'
+            content :'application/json' do
+              schema do
+                key :'$ref', :CityShowResponse
+              end
+            end
+          end
+        end
+      end
+
       swagger_path '/cities/search' do
         operation :get do
           key :summary, 'Return cities with search parameters'
