@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_30_140509) do
+ActiveRecord::Schema.define(version: 2022_01_30_144507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,4 +24,14 @@ ActiveRecord::Schema.define(version: 2022_01_30_140509) do
     t.index ["name"], name: "index_cities_on_name", unique: true
   end
 
+  create_table "towns", force: :cascade do |t|
+    t.bigint "city_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id", "name"], name: "index_towns_on_city_id_and_name", unique: true
+    t.index ["city_id"], name: "index_towns_on_city_id"
+  end
+
+  add_foreign_key "towns", "cities"
 end
