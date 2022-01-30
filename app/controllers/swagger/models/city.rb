@@ -11,7 +11,7 @@ module Swagger
           key :required, %i[id name alpha_2_code]
 
           property :id do
-            key :type, :int64
+            key :type, :integer
             key :example, 1
           end
 

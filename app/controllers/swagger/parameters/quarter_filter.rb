@@ -2,16 +2,16 @@
 
 module Swagger
   module Parameters
-    class TownFilter
+    class QuarterFilter
       include Swagger::Blocks
 
       swagger_component do
-        schema :TownFilter do
+        schema :QuarterFilter do
           key :type, :object
 
           property :name_eq do
             key :type, :string
-            key :example, 'Town name'
+            key :example, 'Quarter name'
           end
 
           property :s do

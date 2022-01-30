@@ -11,7 +11,7 @@ module Swagger
 
           property :name_eq do
             key :type, :string
-            key :example, 'City name'
+            key :example, 'District name'
           end
 
           property :s do
