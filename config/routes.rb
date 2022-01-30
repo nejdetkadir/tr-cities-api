@@ -22,6 +22,10 @@ Rails.application.routes.draw do
 
         resources :districts, only: [:index] do
           get '/search', to: 'districts#search', on: :collection
+
+          resources :quarters, only: [:index] do
+            get '/search', to: 'quarters#search', on: :collection
+          end
         end
       end
     end
