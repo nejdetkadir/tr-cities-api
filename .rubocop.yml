@@ -1,0 +1,30 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-minitest
+
+Rails:
+  Enabled: true
+
+AllCops:
+  NewCops: disable
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*.rb
+
+Rails/Output:
+  Enabled: false
+
+Metrics/BlockLength:
+  Exclude:
+    - app/controllers/swagger/**/*
+
+Style/Documentation:
+  Enabled: false
