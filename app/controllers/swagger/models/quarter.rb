@@ -2,11 +2,11 @@
 
 module Swagger
   module Models
-    class Town
+    class Quarter
       include Swagger::Blocks
 
       swagger_component do
-        schema :Town do
+        schema :Quarter do
           key :type, :object
           key :required, %i[id name]
 
@@ -17,7 +17,7 @@ module Swagger
 
           property :name do
             key :type, :string
-            key :example, 'Bafra'
+            key :example, 'Kuşçular Köyü'
           end
         end
       end

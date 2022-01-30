@@ -2,20 +2,28 @@
 
 module Swagger
   module Controllers
-    class TownsController
+    class QuartersController
       include Swagger::Blocks
 
-      swagger_path '/cities/{city_id}/towns' do
+      swagger_path '/cities/{city_id}/towns/{town_id}/districts/{district_id}/quarters' do
         operation :get do
-          key :summary, 'Return towns with by city id'
-          key :description, 'Return towns with your pagination parameters with by city id'
-          key :operationId, 'listTowns'
+          key :summary, 'Return quarters with by district id'
+          key :description, 'Return quarters with your pagination parameters with by district id'
+          key :operationId, 'listQuarters'
           key :tags, [
-            'towns'
+            'quarters'
           ]
 
           parameter do
             key :'$ref', :city_id
+          end
+
+          parameter do
+            key :'$ref', :town_id
+          end
+
+          parameter do
+            key :'$ref', :district_id
           end
 
           parameter do
@@ -30,24 +38,32 @@ module Swagger
             key :description, 'Successfull response'
             content :'application/json' do
               schema do
-                key :'$ref', :TownsListResponse
+                key :'$ref', :QuartersListResponse
               end
             end
           end
         end
       end
 
-      swagger_path '/cities/{city_id}/towns/search' do
+      swagger_path '/cities/{city_id}/towns/{town_id}/districts/{district_id}/quarters/search' do
         operation :get do
-          key :summary, 'Return towns with search parameters with by city id'
-          key :description, 'Return towns with your pagination and search parameters with by city id'
-          key :operationId, 'searchTowns'
+          key :summary, 'Return quarters with search parameters with by district id'
+          key :description, 'Return quarters with your pagination and search parameters with by district id'
+          key :operationId, 'searchQuarters'
           key :tags, [
-            'towns'
+            'quarters'
           ]
 
           parameter do
             key :'$ref', :city_id
+          end
+
+          parameter do
+            key :'$ref', :town_id
+          end
+
+          parameter do
+            key :'$ref', :district_id
           end
 
           parameter do
@@ -68,7 +84,7 @@ module Swagger
             key :required, false
             key :style, :deepObject
             schema do
-              key :'$ref', :TownFilter
+              key :'$ref', :QuarterFilter
             end
           end
 
@@ -76,7 +92,7 @@ module Swagger
             key :description, 'Successfull response'
             content :'application/json' do
               schema do
-                key :'$ref', :TownsListResponse
+                key :'$ref', :QuartersListResponse
               end
             end
           end

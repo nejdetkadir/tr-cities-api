@@ -15,23 +15,11 @@ module Swagger
           ]
 
           parameter do
-            key :name, :city_id
-            key :in, :path
-            key :description, 'The id of the city'
-            key :required, true
-            schema do
-              key :type, :integer
-            end
+            key :'$ref', :city_id
           end
 
           parameter do
-            key :name, :town_id
-            key :in, :path
-            key :description, 'The id of the town'
-            key :required, true
-            schema do
-              key :type, :integer
-            end
+            key :'$ref', :town_id
           end
 
           parameter do
@@ -63,23 +51,11 @@ module Swagger
           ]
 
           parameter do
-            key :name, :city_id
-            key :in, :path
-            key :description, 'The id of the city'
-            key :required, true
-            schema do
-              key :type, :integer
-            end
+            key :'$ref', :city_id
           end
 
           parameter do
-            key :name, :town_id
-            key :in, :path
-            key :description, 'The id of the town'
-            key :required, true
-            schema do
-              key :type, :integer
-            end
+            key :'$ref', :town_id
           end
 
           parameter do
