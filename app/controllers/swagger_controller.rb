@@ -25,6 +25,13 @@ class SwaggerController < ApplicationController
 
   # A list of all classes that have swagger_* declarations.
   SWAGGERED_CLASSES = [
+    Swagger::Controllers::CitiesController,
+    Swagger::Parameters::Page,
+    Swagger::Parameters::CityFilter,
+    Swagger::Responses::City::List,
+    Swagger::Models::City,
+    Swagger::Models::Meta,
+    Swagger::Models::Pagination,
     self
   ].freeze
 
