@@ -11,4 +11,13 @@ Rails.application.routes.draw do
     get '/', to: 'swagger#index', as: 'swagger_root'
     get '/data', to: 'swagger#data', as: 'swagger_data'
   end
+
+  # Cities
+  defaults format: :json do
+    resources :cities, only: [:index] do
+      collection do
+        get '/search', to: 'cities#search'
+      end
+    end
+  end
 end
