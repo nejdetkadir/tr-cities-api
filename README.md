@@ -2,7 +2,7 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
 ![Ruby Version](https://img.shields.io/badge/ruby_version-2.7.2-blue.svg)
 ![Rails Version](https://img.shields.io/badge/rails_version-7.0.1-c52f24.svg)
-[![Swagger documentation](https://img.shields.io/badge/swagger_documentation-84e92c.svg?&logo=swagger&logoColor=black)](https://tr-cities-api.herokuapp.com/swagger)
+[![Swagger documentation](https://img.shields.io/badge/swagger_documentation-84e92c.svg?&logo=swagger&logoColor=black)](https://tr-cities-api.herokuapp.com)
 
 # Cities in Turkey API
 API includes all cities, towns, districts and quarters in Turkey. You can access data source from [here](https://github.com/nejdetkadir/il-ilce-semt-mahalleler).
